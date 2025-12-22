@@ -235,3 +235,10 @@ https://www.youtube.com/watch?v=cf-J4ffMBfo
   white-space: nowrap;
   width: 1px;
 }
+
+
+.card-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr)
+
+}
