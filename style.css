@@ -238,13 +238,24 @@ https://www.youtube.com/watch?v=cf-J4ffMBfo
 
 header {
   background-color: var(--clr-primary-light-1);
-  padding:1rem;
 
   & nav {
     display: flex;
     justify-content: space-between;
     width: 100%;
     color: var(--clr-accent);
+    
+    & li {
+      height: 100%;
+      padding: 1.5rem;
+      min-width: 2rem;
+      text-align: center;
+      cursor: pointer;
+    }
+    & li:hover{
+      background-color: var(--clr-accent);
+      color: var(--clr-accent-light-1)
+    }
 
     & .logo {
       display: flex;
@@ -259,7 +270,8 @@ header {
       }
       & h2{
         max-width: 10rem;
-        line-height: 1.6rem;
+        line-height: 1.2rem;
+        font-size: 1.5rem;
       
       }
     }
@@ -305,7 +317,7 @@ header {
     & .right-container{
       align-self: center;
       background-color: var(--clr-accent);
-      border-radius: 100vw;
+      border-radius: 100%;
       padding:4rem;
       & img {
         width: 8rem;
@@ -324,6 +336,12 @@ header {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   padding: 4rem;
+  & span{
+    background-color: var(--clr-accent);
+    color: var(--clr-accent-light-1);
+    padding: 0.5rem;
+    border-radius: 2rem;
+  }
 }
 
 .history {
@@ -338,7 +356,7 @@ header {
     & .history-left-container{
       align-self: center;
       background-color: var(--clr-accent);
-      border-radius: 100vw;
+      border-radius: 100%;
       padding:4rem;
       & img {
         width: 8rem;
@@ -358,5 +376,7 @@ header {
 
 footer{
   background-color: var(--clr-accent);
-  color: var(--clr-accent-light-1)
+  color: var(--clr-accent-light-1);
+  min-height: 10rem;
+  padding:4rem;
 }
