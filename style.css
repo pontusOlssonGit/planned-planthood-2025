@@ -278,10 +278,41 @@ header {
 
 .gallery {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  padding:4rem;
+  & .gallery-text{
+    max-width: 50vw;
+    
+    
+  }
 }
 
 .newsletter {
   background-color: var(--clr-primary-light-1);
+  padding:4rem;
+
+  & .newsletter-flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    min-height: 30vh;
+
+    & .left-container{
+      max-width: 30vw;
+      align-self: center;
+    }
+    & .right-container{
+      align-self: center;
+      background-color: var(--clr-accent);
+      border-radius: 100vw;
+      padding:4rem;
+      & img {
+        width: 8rem;
+        height: 8rem;
+      }
+    }
+  }
 }
 
 .card-heading {
@@ -291,11 +322,37 @@ header {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr)
+  grid-template-columns: repeat(4, 1fr);
+  padding: 4rem;
 }
 
 .history {
   background-color: var(--clr-primary-light-1);
+  padding:4rem;
+  & .history-flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    min-height: 30vh;
+
+    & .history-left-container{
+      align-self: center;
+      background-color: var(--clr-accent);
+      border-radius: 100vw;
+      padding:4rem;
+      & img {
+        width: 8rem;
+        height: 8rem;
+      }
+      
+    }
+    & .history-right-container{
+      max-width: 30vw;
+      align-self: center;
+      text-align: left;
+    }
+  }
+
 }
 
 
