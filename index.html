@@ -15,14 +15,30 @@
 
 <body>
 
-    <header>
+    <header class="content-grid">
         <nav>
-            Planned Planthood
-            Meny
-            Hem
-            Historik
-            Tips
-            Kontakt
+            <div class="logo">
+                <img src="/assets/images/logo.svg" alt="logo">
+                <h2>
+                    Planned Planthood
+                </h2>
+            </div>
+            <ul role="list">
+                <!--<li>Meny</li>. hide i think  -->
+
+                <li>
+                    Hem
+                </li>
+
+                <li> Historik</li>
+
+                <li>
+                    Tips
+                </li>
+                <li>
+                    Kontakt
+                </li>
+            </ul>
         </nav>
     </header>
 
@@ -34,22 +50,31 @@
             <h2>
                 Våra uppskattade växter
             </h2>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, ex vero harum recusandae et, nemo ea,
-            non fugit sapiente sit dolore autem! Expedita illo deleniti maiores harum consequatur debitis hic.
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, ex vero harum recusandae et, nemo
+                ea,
+                non fugit sapiente sit dolore autem! Expedita illo deleniti maiores harum consequatur debitis hic.
+            </p>
         </section>
 
-        <section class="newsletter">
+        <section class="newsletter fullwidth">
             <h2>
                 Anmäl dig till vårt nyhetsbrev så du inte missar en utsådd!
             </h2>
-            Skicka
+            <form>
+                <input>
+                <button>
+                    Skicka
+                </button>
+            </form>
         </section>
 
-        <h2>
+        <h2 class="card-heading">
             Alla våra växter
         </h2>
 
         <section class="card-grid">
+
             <article>
                 <h3>
                     Gurka
@@ -201,7 +226,7 @@
             </article>
 
         </section>
-        <section>
+        <section class="history fullwidth">
             <h2>
                 Våra tidigare odlingar
             </h2>

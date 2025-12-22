@@ -236,9 +236,70 @@ https://www.youtube.com/watch?v=cf-J4ffMBfo
   width: 1px;
 }
 
+header {
+  background-color: var(--clr-primary-light-1);
+  padding:1rem;
 
-.card-grid{
+  & nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    color: var(--clr-accent);
+
+    & .logo {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+     
+
+      & img {
+        
+        height: 3rem;
+        width: 3rem;
+      }
+      & h2{
+        max-width: 10rem;
+        line-height: 1.6rem;
+      
+      }
+    }
+
+    & [role="list"] {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+  
+  }
+
+}
+
+
+
+.gallery {
+  text-align: center;
+}
+
+.newsletter {
+  background-color: var(--clr-primary-light-1);
+}
+
+.card-heading {
+  text-align: center;
+  margin: 2rem 0 1rem 0;
+}
+
+.card-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr)
+}
 
+.history {
+  background-color: var(--clr-primary-light-1);
+}
+
+
+footer{
+  background-color: var(--clr-accent);
+  color: var(--clr-accent-light-1)
 }
