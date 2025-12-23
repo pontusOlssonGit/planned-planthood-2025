@@ -370,21 +370,21 @@ header {
         color: var(--clr-primary-dark);
         border-radius: 3rem;
         padding-right: 5rem;
+        border: 1px solid black;
       }
 
       .input-wrapper button {
         position: absolute;
+        margin: 2px;
         top: 0;
         right: 0;
         bottom: 0;
-        height: 90%;
-
-
         border-radius: 4rem;
         padding: 1rem;
         border: none;
         background-color: var(--clr-accent);
         cursor: pointer;
+        
       }
 
 
@@ -583,7 +583,14 @@ footer {
     flex-direction: column;
   }
 
+
+
   .gallery {
+   
+    .gallery-text{
+      min-width: 100%;
+      margin-bottom: 2rem;
+    }
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
