@@ -244,15 +244,17 @@ header {
     justify-content: space-between;
     width: 100%;
     color: var(--clr-accent);
-    
+
     & li {
       height: 100%;
       padding: 1.5rem;
       min-width: 2rem;
       text-align: center;
       cursor: pointer;
+      text-transform: uppercase;
     }
-    & li:hover{
+
+    & li:hover {
       background-color: var(--clr-accent);
       color: var(--clr-accent-light-1)
     }
@@ -261,18 +263,19 @@ header {
       display: flex;
       flex-direction: row;
       align-items: center;
-     
+
 
       & img {
-        
+
         height: 3rem;
         width: 3rem;
       }
-      & h2{
+
+      & h2 {
         max-width: 10rem;
         line-height: 1.2rem;
         font-size: 1.5rem;
-      
+
       }
     }
 
@@ -281,7 +284,7 @@ header {
       align-items: center;
       gap: 2rem;
     }
-  
+
   }
 
 }
@@ -292,33 +295,77 @@ header {
   text-align: center;
   display: flex;
   justify-content: center;
-  padding:4rem;
-  & .gallery-text{
+  padding: 4rem;
+
+  & .gallery-text {
     max-width: 50vw;
-    
-    
+
+    & h2 {
+      margin-bottom: 1rem;
+    }
+
+
+
   }
 }
 
 .newsletter {
   background-color: var(--clr-primary-light-1);
-  padding:4rem;
+  padding: 4rem;
 
-  & .newsletter-flex{
+  & .newsletter-flex {
     display: flex;
     flex-direction: row;
     justify-content: center;
     min-height: 30vh;
 
-    & .left-container{
+    & .left-container {
       max-width: 30vw;
       align-self: center;
+
+      & h2 {
+        margin-bottom: 1rem;
+      }
+
+      .input-wrapper {
+
+        position: relative;
+        display: inline-block;
+      }
+
+      .input-wrapper input {
+
+        background-color: var(--clr-accent-light-1);
+        padding: 1rem;
+        color: var(--clr-primary-dark);
+        border-radius: 3rem;
+        padding-right: 5rem;
+      }
+
+      .input-wrapper button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        height: 90%;
+
+
+        border-radius: 4rem;
+        padding: 1rem;
+        border: none;
+        background-color: var(--clr-accent);
+        cursor: pointer;
+      }
+
+
     }
-    & .right-container{
+
+    & .right-container {
       align-self: center;
       background-color: var(--clr-accent);
       border-radius: 100%;
-      padding:4rem;
+      padding: 4rem;
+
       & img {
         width: 8rem;
         height: 8rem;
@@ -335,48 +382,128 @@ header {
 .card-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  padding: 4rem;
-  & span{
+  gap: 1rem;
+  margin-bottom: 2rem;
+
+  & span {
     background-color: var(--clr-accent);
     color: var(--clr-accent-light-1);
     padding: 0.5rem;
     border-radius: 2rem;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+
+  }
+
+  & article {
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    background-color: var(--clr-neutral-100);
+    gap: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+    & .span-wrapper {
+      display: flex;
+      flex-direction: row;
+      gap: 0.2rem;
+      flex-wrap: wrap;
+
+    }
   }
 }
 
 .history {
   background-color: var(--clr-primary-light-1);
-  padding:4rem;
-  & .history-flex{
+  padding: 4rem;
+  margin-bottom: 2rem;
+
+  & .history-flex {
     display: flex;
     flex-direction: row;
     justify-content: center;
     min-height: 30vh;
 
-    & .history-left-container{
+    & .history-left-container {
       align-self: center;
       background-color: var(--clr-accent);
       border-radius: 100%;
-      padding:4rem;
+      padding: 4rem;
+
       & img {
         width: 8rem;
         height: 8rem;
       }
-      
+
     }
-    & .history-right-container{
+
+    & .history-right-container {
+      margin-left: 4rem;
+      display: flex;
+      flex-direction: column;
       max-width: 30vw;
       align-self: center;
       text-align: left;
+      gap: 1rem;
+
+      & button {
+
+        align-self: end;
+        padding: 0.5rem;
+        background-color: var(--clr-accent);
+        border-radius: 2rem;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+
+}
+
+footer {
+  background-color: var(--clr-accent);
+  color: var(--clr-accent-light-1);
+  min-height: 10rem;
+  padding: 4rem;
+
+  & .footer-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+  }
+
+  & .footer-left-wrapper {
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    & .footer-contact-details {
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  & .footer-right-wrapper{
+    min-width: 30%;
+    display: flex;
+    justify-content: end;
+    flex-wrap: wrap;
+    height: 100%;
+   
+    & ul {
+       list-style-type: none;
+       display: flex;
+       flex-direction: column;
+       justify-content: space-between;
+    
+    
     }
   }
 
 }
 
 
-footer{
-  background-color: var(--clr-accent);
-  color: var(--clr-accent-light-1);
-  min-height: 10rem;
-  padding:4rem;
-}
+
