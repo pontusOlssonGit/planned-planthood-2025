@@ -424,6 +424,8 @@ header {
     font-size: 12px;
     text-transform: uppercase;
     font-weight: 600;
+    text-align: center;
+    flex: 0 0 10ch;
 
   }
 
@@ -435,14 +437,21 @@ header {
     gap: 2rem;
     justify-content: space-evenly;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    
 
     & h3 {
       max-width: max-content;
       cursor: pointer;
+      flex: 0 0 1ch;
+      
       &:hover {
         text-decoration: underline;
         color: var(--clr-accent)
       }
+    }
+
+    & .card-desc {
+      flex: 1 0 5ch;
     }
 
     & .main-card-image {
@@ -483,6 +492,7 @@ header {
         & p {
           color: var(--clr-accent);
           font-weight: bold;
+          
         }
       }
     }
@@ -505,6 +515,7 @@ header {
       background-color: var(--clr-accent);
       border-radius: 100%;
       padding: 4rem;
+      
 
       & img {
         width: 8rem;
@@ -520,7 +531,7 @@ header {
       max-width: 30vw;
       align-self: center;
       text-align: left;
-      gap: 1rem;
+      gap: 2rem;
 
       & button {
 
@@ -530,6 +541,7 @@ header {
         border-radius: 2rem;
         border: none;
         cursor: pointer;
+        min-width: 50%;
       }
     }
   }
@@ -538,7 +550,8 @@ header {
 
 footer {
   background-color: var(--clr-accent);
-  color: var(--clr-accent-light-1);
+  color: white !important;
+  
   min-height: 10rem;
   padding: 4rem;
 
@@ -653,10 +666,21 @@ footer {
       max-width: 100%;
       justify-items: center;
       text-align: center;
+      & .input-wrapper{
+          min-width: 100%;
+        }
+
+      & input {
+        min-width: 100%;
+      }
 
       & form {
+        min-width: 100%;
         margin-top: 2rem;
         margin-bottom: 2rem;
+
+
+        
       }
       }
     }
@@ -670,7 +694,8 @@ footer {
 
 
   .history {
-    padding:0;
+    padding: 0 0 2rem 0;
+   
 
     & .history-flex{
       flex-direction: column;
@@ -679,7 +704,11 @@ footer {
         max-width: 100%;
         margin: 2rem 0 0 0;
         text-align: center;
+        & button {
+          min-width: 100%;
+        }
       }
+      
     }
   }
 
