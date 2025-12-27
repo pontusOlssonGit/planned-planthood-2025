@@ -132,8 +132,11 @@ const createCard = (card) => {
 LOOP TO GENERATE ALL CARDS FROM CARDS ARRAY
 */
 for (let i = 0; i < 12; i++) {
-
   // small hack to loop over the array twice.
   let index = i % 6;
   createCard(cards[index]);
+}
+
+const toggleDarkMode = () => {
+    document.getElementById("body").classList.toggle("darkmode")
 }

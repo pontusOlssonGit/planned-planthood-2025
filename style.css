@@ -24,6 +24,7 @@ html {
 /* min body height */
 body {
   min-height: 100vh;
+  
 }
 
 /* responsive images/videos */
@@ -144,6 +145,25 @@ main {
 
   --flow-space: 1.75em;
   --flow-space-lg: 4em;
+}
+
+.darkmode{
+  --clr-accent: 	#ababab;
+  --clr-primary-light-1: black;
+  --clr-neutral-100: black;
+  --clr-accent-light-1:	#202020;
+  --clr-neutral-400: white;
+}
+.darkmode-button{
+  background-color: var(--clr-accent-light-1);
+  color: var(--clr-neutral-400);
+  position: fixed;
+  top: 0;
+  right: 0;
+  border-radius: 100%;
+  padding:0.5rem;
+  margin-top: 0.5rem;
+  margin-right: 2rem;
 }
 
 /*** Global/base ***/
