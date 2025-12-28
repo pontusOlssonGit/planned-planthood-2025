@@ -72,11 +72,20 @@ FUNCTION TO GENERATE A CARD. TO REDUCE BLOAT IN HTML.
 
 const createCard = (card) => {
   const cardArticle = document.createElement("article");
+  const imageContainer = document.createElement("div")
+  imageContainer.classList.add("image-container")
   const img = document.createElement("img");
   img.classList.add("main-card-image")
   img.src = card.image;
   img.alt =""
-  cardArticle.appendChild(img);
+  const svgOverlay = document.createElement("img");
+  svgOverlay.classList.add("svg-overlay");
+  svgOverlay.src="/assets/images/icon-watermark.svg"
+  imageContainer.appendChild(img);
+    imageContainer.appendChild(svgOverlay)
+
+  cardArticle.appendChild(imageContainer);
+ 
   const spanWrapper = document.createElement("div");
   spanWrapper.classList.add("span-wrapper")
 
