@@ -148,7 +148,7 @@ main {
 }
 
 .darkmode{
-  --clr-accent: 	#ababab;
+ 
   --clr-primary-light-1: black;
   --clr-neutral-100: black;
   --clr-accent-light-1:	#202020;
@@ -156,7 +156,7 @@ main {
 }
 .darkmode-button{
   background-color: var(--clr-green-400);
-  color: var(--clr-neutral-100);
+  color: white;
   border: none;
   position: fixed;
   bottom: 0;
@@ -201,7 +201,6 @@ body {
   background-color: var(--clr-accent-light-1);
   color: var(--clr-neutral-400);
 }
-
 
 /*** Composition ***/
 .flow>*+* {
@@ -402,8 +401,6 @@ header {
         cursor: pointer;
         
       }
-
-
     }
 
     & .right-container {
@@ -433,7 +430,7 @@ header {
 
   & span {
     background-color: var(--clr-accent);
-    color: var(--clr-accent-light-1);
+    color: white;
     padding: 0.5rem;
     border-radius: 2rem;
     font-size: 12px;
@@ -545,7 +542,6 @@ header {
       border-radius: 100%;
       padding: 4rem;
       
-
       & img {
         width: 8rem;
         height: 8rem;
@@ -634,10 +630,6 @@ footer {
   }
 }
 
-
-
-
-
 @media (max-width: 1200px) {
 
   .card-grid {
@@ -691,9 +683,6 @@ footer {
     width: 0;
   }
 }
-
-
-
   .gallery {
    
     & .gallery-text{
@@ -755,25 +744,19 @@ footer {
         min-width: 100%;
         margin-top: 2rem;
         margin-bottom: 2rem;
-
-
-        
       }
       }
     }
   }
-
 
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
 
   }
 
-
   .history {
     padding: 0 0 2rem 0;
    
-
     & .history-flex{
       flex-direction: column;
 

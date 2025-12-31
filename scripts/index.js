@@ -80,9 +80,10 @@ const createCard = (card) => {
   img.alt =""
   const svgOverlay = document.createElement("img");
   svgOverlay.classList.add("svg-overlay");
+  svgOverlay.alt = "";
   svgOverlay.src="/assets/images/icon-watermark.svg"
   imageContainer.appendChild(img);
-    imageContainer.appendChild(svgOverlay)
+  imageContainer.appendChild(svgOverlay)
 
   cardArticle.appendChild(imageContainer);
  
