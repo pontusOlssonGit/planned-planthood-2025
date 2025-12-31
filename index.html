@@ -5,11 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
     <title>Välkommen till Planned planthood!</title>
 </head>
 
 <body id="body">
-    <button class="darkmode-button" onclick="toggleDarkMode()">Darkmode</button>
+
+    <input type="checkbox" id="dark-mode-toggle" class="darkmode-button" onchange="toggleDarkMode()" />
+    <label for="dark-mode-toggle" class="toggle"></label>
+    <!-- <button  onclick="toggleDarkMode()">Darkmode</button> -->
     <header class="content-grid">
         <nav>
             <div class="logo">
