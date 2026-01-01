@@ -277,6 +277,7 @@ header {
     color: var(--clr-accent);
     & .hamburger-menu {
         visibility: hidden;
+        transition: 0s;
       }
 
     & li {
@@ -810,6 +811,7 @@ footer {
 @media (max-width: 600px) {
 
   header{
+    padding: 1rem;
   nav {
     flex-direction: row;
 
