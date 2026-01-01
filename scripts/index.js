@@ -49,7 +49,6 @@ const cards = [
   },
 ];
 
-
 const colorMap =  new Map();
 
 colorMap.set("Blommor", "#800000");
@@ -64,7 +63,6 @@ colorMap.set("Snabbväxande", "#52527a");
 colorMap.set("Luftfuktande", "#003300");
 
 const cardGrid = document.getElementById("card-grid");
-
 
 /*
 FUNCTION TO GENERATE A CARD. TO REDUCE BLOAT IN HTML.
