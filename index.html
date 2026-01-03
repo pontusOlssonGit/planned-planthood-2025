@@ -11,8 +11,9 @@
 
 <body id="body">
 
-    <input type="checkbox" id="dark-mode-toggle" class="darkmode-button" onchange="toggleDarkMode()" />
     <label for="dark-mode-toggle" class="toggle"></label>
+    <input type="checkbox" id="dark-mode-toggle" class="darkmode-button" onchange="toggleDarkMode()" />
+   
     <!-- <button  onclick="toggleDarkMode()">Darkmode</button> -->
     <header class="content-grid">
         <nav>
@@ -23,7 +24,15 @@
                 </h2>
             </div>
 
-            <img alt ="hamburger-menu" class="hamburger-menu" src="assets/images/icon-menu.svg">
+            <img alt ="hamburger-menu" class="hamburger-menu" src="assets/images/icon-menu.svg" onclick="document.getElementById('mobile-menu').showModal()">
+            <dialog id="mobile-menu">
+            <ul id="menu">
+                <a href="#"><li>Hem</li></a>
+                <a href="#"><li>Historik</li></a>
+                <a href="#"><li>Tips</li></a>
+                <a href="#"><li>Kontakt</li></a>
+            </ul>
+            </dialog>
             <ul role="list">
                 <!--<li>Meny</li>. hide i think  -->
                 <a href="#"><li>Hem</li></a>
@@ -81,7 +90,7 @@
             </div>
         </section>
 
-        <h1 class="card-heading">
+        <h1 class="cards-heading">
             Alla våra växter
         </h2>
 
