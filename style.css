@@ -160,6 +160,7 @@ main {
   --clr-accent-light-1:	#202020;
   --clr-neutral-400: white;
   --clr-neutral-300: hsl(0, 0%, 91%);
+  --clr-neutral-200: hsl(0, 0%, 23%);
   & #dark-mode-toggle{
     background-color: #ffffff;
     background-image:url('/assets/images/sun.svg');
@@ -206,8 +207,7 @@ h3 {
 
 a {
   text-decoration: none;
-  color: var(--clr-accent);
-
+  color: inherit;
   &:hover,
   &:focus-visible {
     text-decoration: underline;
@@ -424,10 +424,11 @@ header {
         position: relative;
         display: inline-block;
         min-width: 100%;
+        border: 1px solid var(--clr-neutral-200);
+        border-radius: 3rem;
         & :focus-visible{
-          border:none;
           outline: 2px solid var(--clr-accent);
-          outline-offset: 2px;
+          outline-offset: 1px;
         }
       }
 
@@ -502,8 +503,6 @@ header {
     gap: 2rem;
     justify-content: space-evenly;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    
-
     & h3 {
       max-width: max-content;
       cursor: pointer;
@@ -558,6 +557,10 @@ header {
       display: flex;
       flex-direction: row;
       align-items: center;
+      & a:focus-visible{
+        color: var(--clr-accent);
+        transition: 0s;
+      }
     
       & img {
         background-color: var(--clr-neutral-300);
