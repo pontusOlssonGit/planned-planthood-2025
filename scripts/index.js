@@ -2,54 +2,60 @@ const cards = [
   {
     name: "Gurka",
     image: "/assets/images/cucumber.jpg",
-    tags: ["Blommor","Ätbart","Grönska"],
+    tags: ["Blommor", "Ätbart", "Grönska"],
     desc: "Gurka växer snabbt, är enkel att odla och ger mängder med gurkor, bara man är noga med vattning, omplantering, duschning och gödsling.",
     author: "Coolio",
-    timeStamp: "2024-04-01"
+    avatar: "https://avatar.iran.liara.run/public/38",
+    timeStamp: "2024-04-01",
   },
-   {
+  {
     name: "Tomat",
     image: "/assets/images/tomato.jpg",
-    tags: ["Solälskande","Lättodlat","Ätbart"],
+    tags: ["Solälskande", "Lättodlat", "Ätbart"],
     desc: "En perfekt grönsak att odla på balkongen eller i trädgården. Ger riklig skörd under sommaren.",
     author: "Anna Odlare",
-    timeStamp: "2024-12-05"
+    avatar: "https://avatar.iran.liara.run/public/58",
+    timeStamp: "2024-12-05",
   },
-   {
+  {
     name: "Pelargon",
     image: "/assets/images/geranium.jpg",
-    tags: ["Dekorativ","Färgstark","Tålig","Blommor"],
+    tags: ["Dekorativ", "Färgstark", "Tålig", "Blommor"],
     desc: "En vacker och lättskött blomma som trivs både inne och ute under sommaren.",
     author: "Blomsterkalle",
-    timeStamp: "2024-12-03"
+    avatar: "https://avatar.iran.liara.run/public/26",
+    timeStamp: "2024-12-03",
   },
-   {
+  {
     name: "Basilika",
     image: "/assets/images/basil.jpg",
-    tags: ["Dekorativ","Färgstark","Tålig"],
+    tags: ["Dekorativ", "Färgstark", "Tålig"],
     desc: "En fantastisk krydda för pastarätter och sallader. Trivs bäst i ett soligt fönster.",
     author: "Krydd-Malin",
-    timeStamp: "2024-12-07"
+    avatar: "https://avatar.iran.liara.run/public/100",
+    timeStamp: "2024-12-07",
   },
   {
     name: "Sallad",
     image: "/assets/images/lettuce.jpg",
-    tags: ["Snabbväxande","Ätbart","Grönska"],
+    tags: ["Snabbväxande", "Ätbart", "Grönska"],
     desc: "Sallad är en av de enklaste grönsakerna att odla och ger snabba resultat för färska måltider.",
     author: "Grönis",
-    timeStamp: "2024-12-06"
+    avatar: "https://avatar.iran.liara.run/public/47",
+    timeStamp: "2024-12-06",
   },
   {
     name: "Ormbunke",
     image: "/assets/images/fern.jpg",
-    tags: ["Luftfuktande","Grönska","Dekorativ"],
+    tags: ["Luftfuktande", "Grönska", "Dekorativ"],
     desc: "En klassisk växt som passar perfekt i badrummet eller på skuggiga platser.",
     author: "Naturvännen",
-    timeStamp: "2024-12-08"
+    avatar: "https://avatar.iran.liara.run/public/59",
+    timeStamp: "2024-12-08",
   },
 ];
 
-const colorMap =  new Map();
+const colorMap = new Map();
 
 colorMap.set("Blommor", "#800000");
 colorMap.set("Ätbart", "#4c7200ff");
@@ -70,42 +76,44 @@ FUNCTION TO GENERATE A CARD. TO REDUCE BLOAT IN HTML.
 
 const createCard = (card) => {
   const cardArticle = document.createElement("article");
-  const imageContainer = document.createElement("div")
-  imageContainer.classList.add("image-container")
+  const imageContainer = document.createElement("div");
+  imageContainer.classList.add("image-container");
   const img = document.createElement("img");
-  img.classList.add("main-card-image")
+  img.classList.add("main-card-image");
   img.src = card.image;
-  img.alt =""
+  img.alt = "";
   const svgOverlay = document.createElement("img");
   svgOverlay.classList.add("svg-overlay");
   svgOverlay.alt = "";
-  svgOverlay.src="/assets/images/icon-watermark.svg"
+  svgOverlay.src = "/assets/images/icon-watermark.svg";
   imageContainer.appendChild(img);
-  imageContainer.appendChild(svgOverlay)
+  imageContainer.appendChild(svgOverlay);
 
   cardArticle.appendChild(imageContainer);
- 
-  const spanWrapper = document.createElement("div");
-  spanWrapper.classList.add("span-wrapper")
 
-  card.tags.forEach(tag => {
-    
+  const spanWrapper = document.createElement("div");
+  spanWrapper.classList.add("span-wrapper");
+
+  card.tags.forEach((tag) => {
     const span = document.createElement("span");
     span.textContent = tag;
     span.style.backgroundColor = colorMap.get(tag);
     spanWrapper.appendChild(span);
-
   });
 
   cardArticle.appendChild(spanWrapper);
 
+  const headingLink = document.createElement("a");
+  headingLink.href = "#";
+  headingLink.ariaLabel = `Läs mer om ${card.name}`;
+  cardArticle.appendChild(headingLink);
   const h3 = document.createElement("h3");
   h3.textContent = card.name;
 
-  cardArticle.appendChild(h3);
+  headingLink.appendChild(h3);
 
   const desc = document.createElement("p");
-  desc.classList.add("card-desc")
+  desc.classList.add("card-desc");
   desc.textContent = card.desc;
 
   cardArticle.appendChild(desc);
@@ -114,16 +122,20 @@ const createCard = (card) => {
   authorWrapper.classList.add("author-wrapper");
 
   const authorImg = document.createElement("img");
-  authorImg.alt="avatar of user"
-  authorImg.src = "/assets/images/icon-avatar.svg";
+  authorImg.alt = "avatar of user";
+  authorImg.src = card.avatar;
 
   authorWrapper.appendChild(authorImg);
 
   const authorNameAndTimestamp = document.createElement("div");
-  authorNameAndTimestamp.classList.add("author-timestamp")
+  authorNameAndTimestamp.classList.add("author-timestamp");
+  const authorLink = document.createElement("a");
+  authorLink.href = "#";
+  authorLink.ariaLabel = `Se profil för ${card.author}`;
+  authorNameAndTimestamp.appendChild(authorLink);
   const authorName = document.createElement("p");
   authorName.textContent = card.author;
-  authorNameAndTimestamp.appendChild(authorName);
+  authorLink.appendChild(authorName);
 
   const timeStamp = document.createElement("time");
   timeStamp.textContent = card.timeStamp;
@@ -135,7 +147,6 @@ const createCard = (card) => {
   cardGrid.appendChild(cardArticle);
 };
 
-
 /*
 LOOP TO GENERATE ALL CARDS FROM CARDS ARRAY
 */
@@ -146,32 +157,35 @@ for (let i = 0; i < 12; i++) {
 }
 
 const toggleDarkMode = () => {
-    document.getElementById("body").classList.toggle("darkmode")
-}
+  document.getElementById("body").classList.toggle("darkmode");
+};
 
 /*
   MOBILE MENU TOGGLE
 */
 const toggleMenu = () => {
-    document.getElementById("mobile-menu").classList.toggle("active");
-    const hamburger = document.getElementById("hamburger-svg");
-    if (document.getElementById("mobile-menu").classList.contains("active")) {
-      hamburger.src = "/assets/images/icon-close.svg";
-      hamburger.setAttribute("aria-label", "Stäng meny");
-    } else {
-      hamburger.src = "/assets/images/icon-menu.svg";
-      hamburger.setAttribute("aria-label", "Öppna meny");
-    }
-}
+  document.getElementById("mobile-menu").classList.toggle("active");
+  const hamburger = document.getElementById("hamburger-svg");
+  if (document.getElementById("mobile-menu").classList.contains("active")) {
+    hamburger.src = "/assets/images/icon-close.svg";
+    hamburger.setAttribute("aria-label", "Stäng meny");
+  } else {
+    hamburger.src = "/assets/images/icon-menu.svg";
+    hamburger.setAttribute("aria-label", "Öppna meny");
+  }
+};
 
 /*
   IF THE MENU IS ACTIVE AND USER REZISES TO WIDTH MORE THAN 600PX. REMOVE THE ACTIVE CLASS TO HIDE THE MENU.
   ALSO CHANGE THE HAMBURGER ICON BACK TO DEFAULT AND SET ARIA-LABEL TO OPEN MENU.
 */
-window.addEventListener('resize', () => {
+window.addEventListener("resize", () => {
   if (window.innerWidth > 600) {
     document.getElementById("mobile-menu").classList.remove("active");
-    document.getElementById("hamburger-svg").src = "/assets/images/icon-menu.svg";
-    document.getElementById("hamburger-svg").setAttribute("aria-label", "Öppna meny");
+    document.getElementById("hamburger-svg").src =
+      "/assets/images/icon-menu.svg";
+    document
+      .getElementById("hamburger-svg")
+      .setAttribute("aria-label", "Öppna meny");
   }
 });
