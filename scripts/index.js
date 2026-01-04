@@ -148,3 +148,19 @@ for (let i = 0; i < 12; i++) {
 const toggleDarkMode = () => {
     document.getElementById("body").classList.toggle("darkmode")
 }
+
+/*
+  MOBILE MENU TOGGLE
+*/
+const toggleMenu = () => {
+    document.getElementById("mobile-menu").classList.toggle("active");
+}
+
+/*
+  IF THE MENU IS ACTIVE AND USER REZISES TO WIDTH MORE THAN 600PX. REMOVE THE ACTIVE CLASS TO HIDE THE MENU.
+*/
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 600) {
+    document.getElementById("mobile-menu").classList.remove("active");
+  }
+});
