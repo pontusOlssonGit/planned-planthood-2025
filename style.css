@@ -257,6 +257,7 @@ body {
 header {
   transition:0.2s;
   background-color: var(--clr-primary-light-1);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   & nav {
     display: flex;
     justify-content: space-between;
@@ -264,17 +265,21 @@ header {
     & .hamburger-menu {
       visibility: hidden;
         transition: 0s;
+        border:none;
+        background:none;
       }
       & #mobile-menu{
       position: absolute;
       list-style: none;
       display: none;
-      width: 50%;
+      width: 100%;
+      background-color: var(--clr-accent-light-1);
+      border-bottom: 2px solid var(--clr-accent);
       top:0;
       right:0;
-      background-color: white;
       margin-top: 5rem;
     }
+    /* Show mobile menu when mobile-menu has class active i.e. user has clicked the hamburger button */
      & #mobile-menu.active{
         display: block;
       }
@@ -391,7 +396,7 @@ header {
       align-self: center;
 
       & h2 {
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
       }
 
       .input-wrapper {
@@ -407,7 +412,7 @@ header {
         color: var(--clr-primary-dark);
         border-radius: 3rem;
         padding-right: 5rem;
-        border: 1px solid black;
+        border: 1px solid var(--clr-accent-light-1);
       }
 
       .input-wrapper button {
@@ -485,7 +490,7 @@ header {
     }
 
     & .card-desc {
-      flex: 1 0 5ch;
+      flex: 1 0 10ch;
     }
 
     & .image-container{
@@ -515,12 +520,12 @@ header {
       flex-direction: row;
       gap: 0.2rem;
       flex-wrap: wrap;
+
       & span:hover {
         cursor: pointer;
         text-decoration: underline;
         color:white
       }
-
     }
 
     & .author-wrapper {
@@ -812,6 +817,9 @@ footer {
 
   header{
     padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
   nav {
     flex-direction: row;
 
@@ -824,6 +832,7 @@ footer {
     & .hamburger-menu{
       visibility:visible;
       cursor: pointer;
+      
     }
   }
   }
@@ -864,7 +873,6 @@ footer {
   .card-grid {
     grid-template-columns: repeat(1, 1fr);
   }
-
   footer {
     padding:2rem;
     & span {
