@@ -281,7 +281,7 @@ header {
         border:none;
         background:none;
         &:focus-visible{
-          border:10px solid red;
+          border:1px solid var(--clr-accent);
         } 
          
       }
@@ -425,6 +425,7 @@ header {
         display: inline-block;
         min-width: 100%;
         & :focus-visible{
+          border:none;
           outline: 2px solid var(--clr-accent);
           outline-offset: 2px;
         }
