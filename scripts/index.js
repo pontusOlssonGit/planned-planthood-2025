@@ -154,13 +154,24 @@ const toggleDarkMode = () => {
 */
 const toggleMenu = () => {
     document.getElementById("mobile-menu").classList.toggle("active");
+    const hamburger = document.getElementById("hamburger-svg");
+    if (document.getElementById("mobile-menu").classList.contains("active")) {
+      hamburger.src = "/assets/images/icon-close.svg";
+      hamburger.setAttribute("aria-label", "Stäng meny");
+    } else {
+      hamburger.src = "/assets/images/icon-menu.svg";
+      hamburger.setAttribute("aria-label", "Öppna meny");
+    }
 }
 
 /*
   IF THE MENU IS ACTIVE AND USER REZISES TO WIDTH MORE THAN 600PX. REMOVE THE ACTIVE CLASS TO HIDE THE MENU.
+  ALSO CHANGE THE HAMBURGER ICON BACK TO DEFAULT AND SET ARIA-LABEL TO OPEN MENU.
 */
 window.addEventListener('resize', () => {
   if (window.innerWidth > 600) {
     document.getElementById("mobile-menu").classList.remove("active");
+    document.getElementById("hamburger-svg").src = "/assets/images/icon-menu.svg";
+    document.getElementById("hamburger-svg").setAttribute("aria-label", "Öppna meny");
   }
 });
